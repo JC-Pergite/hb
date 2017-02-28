@@ -1,0 +1,6 @@
+photo {
+	"id": 1,
+	"name": "Tokyo",
+	"type": "city",
+	"photoUrl": "http://www.tokyo-skytree.jp/img/index_2015/bg/02_day.jpg"
+}
