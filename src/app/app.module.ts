@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, XHRBackend } from '@angular/http';
 import { InMemoryBackendService, InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
-
 import { routing, appRoutingProviders }    from './app.routing';
 
 import { PhotoData }  from './main/photo-data';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './main/home/home.module';
+import { HomeResolver } from './main/home/home.resolver';
 
 @NgModule({
   declarations: [
@@ -22,12 +22,13 @@ import { HomeModule } from './main/home/home.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(PhotoData, {passThruUnknownUrl: true}),
+    JsonpModule,
     routing,
     HomeModule
   ],
-  providers: [ appRoutingProviders, 
+  providers: [ appRoutingProviders, HomeResolver,
                 { provide: XHRBackend, useClass: InMemoryBackendService },
                 { provide: PhotoData, useClass: InMemoryWebApiModule } ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
