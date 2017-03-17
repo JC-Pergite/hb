@@ -1,0 +1,16 @@
+#albums {
+	border: 1px solid indigo;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	border: 2px dashed violet;
+	margin: 5pt;
+}
+
+h3 {
+	margin-left: 4.5pt;
+}

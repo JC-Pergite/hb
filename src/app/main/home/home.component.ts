@@ -24,21 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-  	this.homeService.getPhotos().subscribe( categoriess => this.categories = categoriess)
+  	this.homeService.getCategories().subscribe( categoriess => this.categories = categoriess)
   }
 
 }
-
-	// <div>
- //  				<div *ngFor="let type of categories | async">
- //  					<ul>{{type.name}}</ul>
-  					// <div *ngFor="let pic of type?.photos">
- //  					 <a [routerLink]="['./category/' + pic.id]">
-        	     	  // <img src={{pic.photoUrl}} width="333" height="333" class="img-responsive" alt="Responsive image">
- //        	   		 </a>
- //        	   		 	<div>
- //        	   		 		<h2>{{pic.comments}}</h2>
- //        	   		 	</div>	
- //        	   		</div> 
- //  			   </div>
- //  			</div>	

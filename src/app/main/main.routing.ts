@@ -5,24 +5,25 @@ import { HomeComponent } from './home/home.component';
 import { HomeDetailsComponent } from './home/home-details.component';
 import { HomeResolver } from './home/home.resolver';
 
-// import { PhotoDetailsComponent } from '../photos/photo-details.component';
-// import { PhotoResolver } from '../photos/photo.resolver';
+import { PhotoDetailsComponent } from './photo/photo-details.component';
+import { PhotoResolver } from './photo/photo.resolver';
+import { PhotoComponent } from './photo/photo.component';
 
 const mainRoutes: Routes = [
-			{ path: 'category', component: HomeComponent },
-			{ path: 'category/:id', component: HomeDetailsComponent,
-				resolve: {
+			
+			{ path: 'category', 
+				children: [
+					{ path: '', component: HomeComponent },
+					{ path: ':id', component: HomeDetailsComponent,
+						resolve: {
 							category: HomeResolver
-						 } // erase once photoComponent and resolver are created
-					// 	 },
-					// children: 
-					// 			{ path: '', component: PhotoDetailsComponent,
-					// 				resolve: {
-					// 							subscribers: 'PhotoResolver'
-					// 						 }
-					// 			}			 
-					// 		  ]
+						}							
+					},
+					{ path:':id/photo/:id', component: PhotoDetailsComponent }
+				]
 			}
+		
+
 ];
 
 export const mainRouting: ModuleWithProviders =

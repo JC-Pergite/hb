@@ -6,11 +6,15 @@ import { HomeDetailsComponent } from './home-details.component';
 import { mainRouting } from '../main.routing';
 import { HomeService } from './home.service';
 
+import { PhotoDetailsComponent } from '../photo/photo-details.component';
+import { PhotoModule } from '../photo/photo.module';
+
+
 @NgModule ({
-	imports: [ SharedModule, mainRouting ], 
+	imports: [ SharedModule, mainRouting, PhotoModule ], 
 	declarations: [ 
 					HomeComponent,
-					HomeDetailsComponent
+					HomeDetailsComponent					
 				  ],
 	providers: [ HomeService ]
 })
